@@ -1,491 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-*{
+body{
     box-sizing: border-box;
-    scrollbar-width: none;
+    background-color: #f3f3f3;
+    height: 100vh;
+
     padding: 0;
     margin: 0;
-}
-
-body{
-    font-family: sans-serif;
-    height: 100vh;
-    background-color: #f1f1f1;
-}
-
-/* Start Header */
-
-/* Start Navbar */
-
-.navbar{
-    background-color: skyblue;
-    padding: 10px 20px;
-}
-
-.navbar .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.navbar .container .navbar-brand{
-    text-decoration: none;
-    color: #fff;
-    font-size: 30px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.navbar .container .navbar-brand img{
-    width: 50px;
-    height: 50px;
-}
-
-.navbar .container .form{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.navbar .container .form .search-bar{
-    border-radius: 5px;
-    border: none;
-    outline: none;
-
-    padding: 5px 10px;
-}
-
-@media (max-width:600px){
-
-    .navbar .container{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .navbar .container .navbar-brand span{
-        display: none;
-    }
-
-    .navbar .container .form{
-        width: 100%;
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .navbar .container .form .search-bar{
-        width: 70%;
-        max-width: 200px;
-    }
-
-}
-
-/* End Navbar */
-
-/* End Header */
-
-/* Start Content */
-.content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 40px;
-    flex-wrap: nowrap;
-    min-height: calc(100vh - 80px);
-}
-
-.content .apps{
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 10px;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-
-    transition: all .3s;
-}
-
-.content .apps:hover{
-    box-shadow: 0 10px 10px rgba(0,0,0,0.8);
-}
-
-.content .apps:active{
-    box-shadow: 0 5px 10px rgba(0,0,0,0.8);
-    transform: translateY(5px);
-}
-
-.content .apps img{
-    width: 180px;
-    height: 180px;
-}
-
-.clicked-app{
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
-    border: 1px solid #000;
-
-    display: none;
-
-    transform: translate(-50%,-50%);
-}
-
-.clicked-app .app{
-    width: 100%;
-    height: 100%;
 
     position: relative;
 }
 
-.clicked-app .app .app-tab{
-    width: 100%;
-    height: 10%;
-    background-color: #f5f5f5;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 10px;
-}
-
-.clicked-app .app .app-tab .btn-close{
-    width: 40px;
-    height: 30px;
-    font-size: 20px;
-    border: 1px solid #000;
-    cursor: pointer;
-}
-
-.clicked-app .app .app-tab .btn-close:hover{
-    background-color: #999;
-}
-
-.clicked-app .app .app-content{
-    /* background-color: red; */
-
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-
-    transform: translate(-50%,0);
-}
-
-@media (max-width: 600px){
-
-    body{
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-    }
-    
-    .content{
-        height: auto;
-        flex-wrap: wrap;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 15px;
-        padding: 10px;
-    }
-
-    .content .apps{
-        max-width: 45%;
-        flex: 1 1 45%;
-    }
-
-    .content .apps img{
-        width: 100%;
-        max-width: 150px;
-        height: auto;
-    }
-
-}
-
-/* Start Calculator */
-
-.clicked-app .app .app-content .calculator{
+.container{
     width: 100%;
     height: 100%;
-    background-color: gray;
-    border: 2px solid #000;
-    border-radius: 10px;
-
-    padding: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    
+    display: grid;
+    place-items: center;
 }
 
-.calculator .cal-outer{
-    width: 98%;
-    height: 98%;
-    background-color: silver;
-    border: 2px solid #000;
-    border-radius: 10px;
-
-    padding: 10px;
-}
-
-.calculator .cal-outer .cal-display{
-    width: 100%;
-    height: 80px;
-    background-color: #333;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.calculator .cal-outer .cal-display .cal-sign{
-    width: 50px;
-    height: 50px;
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold;
+.row{
     text-align: center;
-    line-height: 50px;
 }
 
-.calculator .cal-outer .cal-display .cal-num{
-    color: #fff;
-    font-size: 70px;
-    font-family: "Orbitron", sans-serif;
-}
-
-.calculator .cal-outer .cal-numpad{
-    width: 100%;
-    height: 75%;
-    border: 2px solid #333;
-    border-radius: 10px;
-
-    margin-top: 10px;
-    padding: 10px;
-    flex-wrap: wrap;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-.calculator .cal-outer .cal-numpad .numkey{
-    width: 120px;
-    height: 50px;
-    background-color: #999;
-    border: 2px solid #000;
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 25px;
-    cursor: pointer;
-
-    margin: 3px 5px;
-    padding: 10px;
-}
-
-.calculator .cal-outer .cal-numpad .numkey.numkey0{
-    width: 430px;
-}
-
-.calculator .cal-outer .cal-numpad .numkey:hover{
-    background-color: #777;
-}
-
-.calculator .cal-outer .cal-numpad .numkey:active{
-    background-color: #333;
-}
-
-/* End Calculator */
-
-/* Start Calendar */
-
-.clicked-app .app .app-content .calendar{
-    width: 820px;
-    height: 450px;
-    background-color: lightblue;
-    border: 1px solid steelblue;
-    border-radius: 10px;
+.app-btn{
+    width: 50%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
 
     padding: 20px;
+    margin: 20px;
 
-    position: relative;
-
-    display: none;
-}
-
-.btn{
-    width: 100px;
-    background-color: steelblue;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    padding: 10px;
-    margin: 10px;
-    float: left;
+    transition: all .1s;
 }
 
 .btn:hover{
-    background-color: darkblue;
-}
-
-.year-btn{
-    float: right;
-}
-
-.clear{
-    clear: both;
-}
-
-.month-btn,.year-btn{
-    position: relative;
-}
-
-.dropdown{
-    width: 100px;
     background-color: #fff;
-    color: #000;
-    font-size: 18px;
-
-    display: none;
-
-    position: absolute;
-    left: 0;
-    /* top: 0; */
-
-    z-index: 1;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.8);
 }
 
-.dropdown.show{
-    display: block;
+.btn:active{
+    box-shadow: 0 7px 15px rgba(0,0,0,0.5);
+    transform: translateY(3px);
 }
 
-.dropdown-item{
-    padding: 5px 0;
-    cursor: pointer;
-    opacity: 0.5;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-
-    transition: all 0.2s ease;
-    overflow: hidden;
-}
-
-.dropdown-item:hover{
-    opacity: 1;
-    background-color: steelblue;
-    color: #fff;
-}
-
-.caldates .days .dayname{
-    background-color: steelblue;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 5px;
-
-    padding: 20px 40px;
-}
-
-.caldates .days .day{
-    width: 100px;
-    font-size: 18px;
-    text-align: center;
-    border: 1px solid steelblue;
-    border-radius: 10px;
-
-    padding: 10px 20px;
-    margin: 5px;
-
-    float: left;
-}
-
-.caldays.days .day.blank{
-    background-color: transparent;
-    border: 1px solid transparent;
-}
-
-/* End Calendar */
-
-/* Start Clock */
-
-.clicked-app .app .app-content .clock{
-    width: 900px;
-    height: 450px;
-    /* background-color: blue; */
-    border: 1px solid #000;
-    border-radius: 10px 10px 0 0;
-
-    position: relative;
-
-    display: none;
-}
-
-.clock .clock-indicator{
-    width: 100%;
-    height: 50px;
-    background-color: #333;
-    list-style: none;
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    display: flex;
-}
-
-.clock .clock-indicator li:nth-child(2){
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-}
-
-.clock .clock-indicator li a{
-    width: 300px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 30px;
-    line-height: 50px;
-    text-align: center;
-    opacity: 0.5;
-
-    display: block;
-}
-
-.clock .clock-indicator li a:hover{
-    opacity: 1;
-}
-
-.clock .clock-inner{
+.btn img{
     width: 100%;
     height: 100%;
-    background-color: #555;
-    border-radius: 10px 10px 0 0;
 }
 
-/* End Clock */
+.content{
+    width: 100%;
+    height: 100%;
 
-/* Start Notes */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
+.content.none{
+    display: none;
+}
 
+.app-name{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #000;
 
-/* End Notes */
+    margin-left: 20px;
+}
 
-/* End Content */
+.btn-close{
+    width: 20px;
+    height: 20px;
+
+    margin: 10px;
+    padding: 5px;
+}
+
+.app{
+    width: 100%;
+    height: calc(100% - 75px);
+
+    display: grid;
+    place-items: center;
+}
+
+.app #calculator{
+    width: 700px;
+    height: 100%;
+    background-color: lightgray;
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    padding: 10px;
+}
+
+.display{
+    background-color: #555;
+    color: #fff;
+    font-size: 50px;
+    font-family: "Orbitron", sans-serif;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: end;
+
+    padding: 10px 5px;
+}
+
+.numpad{
+    height: 100%;
+    background-color: #333;
+    border-radius: 5px;
+
+    padding: 35px 10px;
+    margin-top: 40px;
+}
+
+.numpad .key{
+    background-color: #555;
+    font-size: 20px;
+    color: #f4f4f4;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    padding: 15px;
+}
+
+.numpad .key:hover{
+    background-color: #444;
+}
+
+.numpad .key:active{
+    background-color: #333;
+}
+
+@media (max-width: 767px){
+
+    .app-btn{
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .app #calculator{
+        width: 330px;
+        height: auto;
+    }
+
+    .display{
+        font-size: 25px;
+    }
+
+    .numpad{
+        margin-top: 10px;
+    }
+
+}

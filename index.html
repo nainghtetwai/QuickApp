@@ -5,9 +5,6 @@
         <meta name="viewpoint" content="width=device-width,initial-scale=1.0" />
         <title>My Project</title>
 
-        <!-- web icon -->
-        <link href="./img/Logo.png" rel="icon" type="image/png" sizes="32x32" />
-
         <!-- Font Awesome 5 -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -20,184 +17,91 @@
     </head>
     <body>
 
-        <!-- Start Header -->
-        <header>
+        <div class="container">
 
-            <!-- Start Navbar -->
-            <nav class="navbar">
-                <div class="container">
-                    
-                    <a href="javascript:void(0);" class="navbar-brand">
-                        <img src="./img/Logo.png" alt="sitelogo" />
-                        <span>Quick App</span>
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <a href="javascript:void(0);" class="btn app-btn">
+                        <img src="./img/calculator.png" class="app-img" alt="calculator"/>
                     </a>
-
-                    <form class="form">
-                        <i class="fas fa-search"></i>
-                        <input type="text" name="search-bar" id="search-bar" class="search-bar" />
-                    </form>
-
                 </div>
-            </nav>
-            <!-- End Navbar -->
 
-        </header>
-        <!-- End Header -->
+                <div class="col-12 col-md-6">
+                    <a href="javascript:void(0);" class="btn app-btn">
+                        <img src="./img/calendar.png" class="app-img" alt="calendar"/>
+                    </a>
+                </div>
 
-        <!-- Start Content -->
-        <div class="content">
+                <div class="col-12 col-md-6">
+                    <a href="javascript:void(0);" class="btn app-btn">
+                        <img src="./img/clock.png" class="app-img" alt="clock"/>
+                    </a>
+                </div>
 
-            <button type="button" id="calculator" class="apps">
-                <img src="./img/calculator.png" alt="calculator" />
-            </button>
-
-            <button type="button" id="calendar" class="apps">
-                <img src="./img/calendar.png" alt="calendar" />
-            </button>
-
-            <button type="button" id="clock" class="apps">
-                <img src="./img/clock.png" alt="clock" />
-            </button>
-
-            <button type="button" id="notes" class="apps">
-                <img src="./img/notes.png" alt="notes" />
-            </button>
-
-            <div class="clicked-app">
-
-                <div class="app">
-                    <div class="app-tab">
-                        <span class="app-name"></span>
-                        <button type="button" class="btn-close"><i class="fas fa-times"></i></button>
-                    </div>
-
-                    <div class="app-content">
-
-                        <div class="calculator">
-                            <div class="cal-outer">
-                                <div class="cal-display">
-                                    <span class="cal-sign"></span>
-                                    <span class="cal-num"></span>
-                                </div>
-                                <hr/>
-                                <div class="cal-numpad">
-                                    <div class="numkey clear">C</div>
-                                    <div class="numkey delete">Del</div>
-                                    <div class="numkey modulus">%</div>
-                                    <div class="numkey division">/</div>
-                                    <div class="numkey numkey7">7</div>
-                                    <div class="numkey numkey8">8</div>
-                                    <div class="numkey numkey9">9</div>
-                                    <div class="numkey multi">X</div>
-                                    <div class="numkey numkey4">4</div>
-                                    <div class="numkey numkey5">5</div>
-                                    <div class="numkey numkey6">6</div>
-                                    <div class="numkey minus">-</div>
-                                    <div class="numkey numkey1">1</div>
-                                    <div class="numkey numkey2">2</div>
-                                    <div class="numkey numkey3">3</div>
-                                    <div class="numkey plus">+</div>
-                                    <div class="numkey numkey0">0</div>
-                                    <div class="numkey equal">=</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="calendar">
-
-                            <div class="btn month-btn">
-                                <span id="currmonth">Month</span>
-                                <div id="months" class="months dropdown">
-                                    <div class="dropdown-item">Jan</div>
-                                    <div class="dropdown-item">Feb</div>
-                                    <div class="dropdown-item">Mar</div>
-                                    <div class="dropdown-item">Apr</div>
-                                    <div class="dropdown-item">May</div>
-                                </div>
-                            </div>
-
-                            <div class="btn year-btn">
-                                <span id="curryear">Year</span>
-                                <div id="years" class="years dropdown">
-                                    <div class="dropdown-item">2000</div>
-                                    <div class="dropdown-item">2001</div>
-                                    <div class="dropdown-item">2002</div>
-                                    <div class="dropdown-item">2003</div>
-                                    <div class="dropdown-item">2004</div>
-                                </div>
-                            </div>
-
-                            <div class="clear"></div>
-
-                            <div class="caldates">
-
-                                <div class="days">
-                                    <label class="day dayname">Sun</label>
-                                    <label class="day dayname">Mon</label>
-                                    <label class="day dayname">Tue</label>
-                                    <label class="day dayname">Wed</label>
-                                    <label class="day dayname">Thu</label>
-                                    <label class="day dayname">Fri</label>
-                                    <label class="day dayname">Sat</label>
-                                </div>
-
-                                <div class="clear"></div>
-
-                                <div id="caldays" class="caldays days">
-                                    <label class="day">1</label>
-                                    <label class="day">2</label>
-                                    <label class="day">3</label>
-                                    <label class="day">4</label>
-                                    <label class="day">5</label>
-                                    <label class="day">6</label>
-                                    <label class="day">7</label>
-                                    <label class="day">8</label>
-                                    <label class="day">9</label>
-                                    <label class="day">10</label>
-                                    <label class="day">11</label>
-                                    <label class="day">12</label>
-                                    <label class="day">13</label>
-                                    <label class="day">14</label>
-                                    <label class="day">15</label>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="clock">
-
-                            <ul class='clock-indicator'>
-                                <li><a href="javascript:void(0);" class="clock-btn" data-bs-clock-btn="1">Clock</a></li>
-                                <li><a href="javascript:void(0);" class="clock-btn" data-bs-clock-btn="2">Timer</a></li>
-                                <li><a href="javascript:void(0);" class="clock-btn" data-bs-clock-btn="3">Stopwatch</a></li>
-                            </ul>
-
-                            <div class="clock-inner">
-
-                                <div class="clock-item">
-
-                                </div>
-
-                                <div class="clock-item">
-
-                                </div>
-
-                                <div class="clock-item">
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                            
-                    </div>
+                <div class="col-12 col-md-6">
+                    <a href="javascript:void(0);" class="btn app-btn">
+                        <img src="./img/notes.png" class="app-img" alt="notes"/>
+                    </a>
                 </div>
 
             </div>
 
         </div>
-        <!-- End Content -->
+
+        <div class="content">
+
+            <nav class="navbar navbar-expand-md navabr-primary bg-light">
+                <div class="container-fluid justify-content-between">
+                    <a href="javascript:void(0);" class="navbar-brand"><span class="app-name">aaa</span></a>
+                    <button type="button" class="btn-close"></button>
+                </div>
+            </nav>
+
+            <div class="app">
+
+                <div id="calculator" class="container-fluid">
+
+                    <div class="container-fluid">
+                        <div class="row display">
+                            <span class="col-1 cal-sign">+</span>
+                            <span class="col-11 cal-num">999999999999</span>
+                        </div>
+                        <hr/>
+                        <div class="row numpad">
+                            <button type="button" class="col-3 key">C</button>
+                            <button type="button" class="col-3 key">Del</button>
+                            <button type="button" class="col-3 key">/</button>
+                            <button type="button" class="col-3 key">*</button>
+                            <button type="button" class="col-3 key">7</button>
+                            <button type="button" class="col-3 key">8</button>
+                            <button type="button" class="col-3 key">9</button>
+                            <button type="button" class="col-3 key">-</button>
+                            <button type="button" class="col-3 key">4</button>
+                            <button type="button" class="col-3 key">5</button>
+                            <button type="button" class="col-3 key">6</button>
+                            <button type="button" class="col-3 key">+</button>
+                            <button type="button" class="col-3 key">1</button>
+                            <button type="button" class="col-3 key">2</button>
+                            <button type="button" class="col-3 key">3</button>
+                            <button type="button" class="col-3 key">=</button>
+                            <button type="button" class="col-12 key">0</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="calendar" class="container-fluid">
+
+                    <div class="container-fluid">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
         <!-- Bootstrap css1 js1 -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
